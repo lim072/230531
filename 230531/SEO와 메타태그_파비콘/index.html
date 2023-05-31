@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="웹페이지 설명">
+    <meta name="keyword" content="키워드 작성">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="페이지주소">
+    <meta property="og:title" content="페이지제목">
+    <meta property="og:image" content="페이지 썸네일 이미지 주소">
+    <meta property="og:description" content="페이지 설명">
+    <meta property="og:site_name" content="사이트 네임">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <title>파비콘</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+</head>
+<body>
+    <!-- 
+        파비콘 디자인 시
+        16x16 : 매우 작은 화면으로 넣어야하기 때문에 복잡하지 않고 최대한 단순하게 만드세요
+        https://realfavicongenerator.net/
+        이곳에 포토샵으로 512x512의 크기로 만드는 것을 추천합니다
+
+
+        SEO = 검색엔진 최적화
+        사이트의 컨텐츠페이지 정보가 검색에 얼마나 노출되는지, 사용자에게 정보를 전달함에
+        적합한지에 대한 점수를 매겨서(점수측정리스트가 존재), 상위에 노출시키거나
+        저품질 페이지는 멀리 보내거나 보이지 않게 하는 등의 역할을 합니다
+        컨텐츠의 본질의 중요성을 판단하기도 하고, 같은 조건의 컨텐츠인 경우 ★메타태그★의 작성에 영향을 받습니다.
+
+
+
+
+        4가지 개념을 배워봅시다
+
+        1. index(색인)
+        포털사이트는 모든 페이지를 색인이라는 곳에 저장합니다.
+        즉 어떤 페이지를 만들어서 웹 상에 올리면 그 페이지에는 고유의 url이 만들어지고 url을 색인에 저장됩니다
+
+        2. crawling(크롤링)
+        페이지에서 정보를 추출하는 것입니다
+        새 페이지 혹은 업데이트 된 페이지가 생성되면 크롤링을 거쳐서 업데이트 혹은 새로운 페이지가 index에 저장됩니다.
+
+        3. web crawler(크롤러)
+        크롤링을 하는 자동 소프트웨어
+
+        4. 구글봇(googlebot)
+        구글이 만든 크롤러
+        (네이버 : Yeti, 다음 : daumoa, 줌 : zombot) 통틀어서 robots라고 합니다.
+
+        => SEO를 한다는 것은 구글봇이라는 크롤러가 내 사이트에 와서 크롤링을 해서 색인에 잘 저장되도록 하는 과정
+
+        크롤링을 잘 되게 하려면 head에 meta tag를 잘 써야합니다.
+
+
+        ★중요한 meta태그들★
+        title - 최대 40글자까지 가능
+
+        <meta name="description" content="웹페이지 설명">
+        구글은 160자까지 가능, 네이버는 80자까지 가능 => 보통은 80자를 합니다.
+        클릭전에 내용을 읽을 수 있도록 유도하는 CTR(클릭률)을 높이는 효과를 가집니다.
+
+        <meta name="keyword" content="키워드 작성">
+        인스타에서 해시태그와 같은 기능으로 검색엔진을 위한 키워드를 정의합니다.
+        연관검색어라고 생각하면 편함
+        다만 최근 seo리스트에서는 제외됩니다
+
+        <meta name="robots" content="index, follow">
+        위 코드는 검색엔진으로 하여금 해당 태그가 포함된 모든 페이지를 크롤링하고 색인까지 함께 실행하라는
+        의미를 담고 있습니다. 즉 저품질 페이지로 판단되는 것을 피하기 위한 노력으로 볼 수 있습니다.
+        name, content를 어떤 내용을 쓰느냐에 따라서 오히려 특정사이트에 크롤링을 하지도 색인까지도 못하게
+        할 수도 있습니다.
+        예시) <meta name="Yeti" content="noindex, nofollow">
+
+        name에 들어가는 것은 크롤러 이름을 씁니다. robots는 모든 크롤러를 지칭합니다.
+        content속성 : 위의 로봇들에게 명령할 수 있는 명령값들이 하나 이상 적용되는 것
+        all : 색인, 크롤링에 제한이 없는 기본값입니다 content="index, follow"과 동일합니다
+        index : 페이지가 색인되어서 검색결과에 표시할 수 있음을 뜻함
+        noindex : 색인을 거부, 따라서 검색결과에 페이지를 표시하지 않음
+        nofollow : 페이지를 포함해서 링크된 모든 페이지를 수집하게 못하게 함
+        none : all의 정반대 개념으로 content="noindex, nofollow"와 같은 뜻입니다
+
+        noarchive : 비표준일 경우 페이지를 캐시하지 않음
+        nosnippet : 비표준일 경우 겸색결과에 페이지에 대한 미리보기나 스니핏을 지원하지 않음
+
+        오픈그래프 = og
+        오픈그래프는 어떤 html문서의 메타정보를 쉽게 표시하기 위해서 메타 정보에 해당하는
+        제목, 설명, 문서의 타입, 대표 url 등 다양한 요소들에 대하여
+        사람들이 통일해서 쓸 수 있도록 정의하는 프로토콜입니다
+        페이스북이 개발하였습니다 페이스북에 의해서 기존의 다양한 메타 데이터 표기방법을 통일해서 만들어짐
+        즉, 콘텐츠의 요약내용이 SNS에 게시되는데 최적화된 데이터를 가지고 갈 수 있도록 설정하는것입니다.
+
+        기본적으로 웹에 설정해야하는 og메타태그들
+        <meta property="og:type" content="website"> 페이지의 타입을 웹사이트라고 지칭합니다.
+        <meta property="og:url" content="페이지주소"> 페이지의 url을 지칭하는 것
+        <meta property="og:title" content="페이지제목">
+        => title을 썼는데 왜 og:title이라는 태그를 또 쓰는가????
+        og는 페이스북에서 만든것이라서 중복해서 사용할 필요가 없다는 의견이 있지만
+        다수의 개발자들은 이미 많은 곳에서 og를 사용하기 때문에 두가지 모두 표시하는 것이 좋다는 의견입니다.
+
+        <meta property="og:image" content="페이지 썸네일 이미지 주소">
+        <meta property="og:description" content="페이지 설명"> 이것도 title의 설명과 같습니다.
+        <meta property="og:site_name" content="사이트 네임"> 전체사이트는 타이틀로 표시하지만
+        site_name은 좀 더 세부적인 카테고리정도의 레벨을 표시하는 것입니다.
+         
+        <meta property="og:locale" content="ko_KR"> 사이트의 언어선택입니다
+        기본값은 en_US이며, 한글의 경우 ko_KR입니다
+
+        썸네일 이미지 표시에 대한 설정
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        이미지의 경우 최소 600x315px은 되어야하며 1200x630px을 권장합니다
+
+        네이버 블로그나 카카오톡 등을 세분화시켜서 하는 경우
+        웹페이지 타입을 블로그로 합니다
+
+        트위터 미리보기의 경우
+        meta tag의 name값을 twitter:card, twitter:image이런 식으로 세분화 시켜서 작성합니다
+
+        iOS
+        property값을 al:ios:app_store_id 등등 모바일에 세분화시킨 값을 따로 적용해야합니다.
+
+
+
+        마지막 SEO의 방법은 시멘틱태그를 사용하는 방법입니다        
+     --> 
+</body>
+</html>
